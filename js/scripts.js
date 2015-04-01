@@ -17,23 +17,22 @@ jQuery(function ($) {
     // -------------------------------------------------------------
 
     (function () {
-        var nav = $('.navbar.fixed-navbar');
+        //var nav = $('.navbar');
+        var nav2 = $('.navbar.fixed-navbar');
         var scrolled = false;
 
         $(window).scroll(function () {
 
             if (110 < $(window).scrollTop() && !scrolled) {
-                nav.find(".navbar-header").removeClass("hidden");
-                nav.find(".nav").removeClass("navbar-left").addClass("navbar-right");
-                nav.addClass('sticky animated fadeInDown').animate({ 'margin-top': '0px' });
+                // nav.addClass('sticky animated fadeInDown').animate({ 'margin-top': '0px' });
+                nav2.addClass('sticky animated fadeInDown').animate({ 'margin-top': '0px' });
 
                 scrolled = true;
             }
 
             if (110 > $(window).scrollTop() && scrolled) {
-                nav.find(".navbar-header").addClass("hidden");
-                nav.find(".nav").addClass("navbar-left").removeClass("navbar-right");
-                nav.removeClass('sticky animated fadeInDown').css('margin-top', '0px');
+                // nav.removeClass('sticky animated fadeInDown').css('margin-top', '0px');
+                nav2.removeClass('sticky animated fadeInDown').css('margin-top', '0px');
 
                 scrolled = false;
             }
