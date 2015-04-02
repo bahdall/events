@@ -1,0 +1,19 @@
+.bb-admin-tool{
+    display: inline-block;
+    position: relative;
+}
+.bb-admin-tool:hover{
+    border: 1px solid #8B8585;
+}
+.bb-admin-tool .e-edit-btn{
+    position: absolute;
+    display: none;
+    top: -18px;
+    right: 0px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.bb-admin-tool:hover .e-edit-btn{
+    display: block;
+}
