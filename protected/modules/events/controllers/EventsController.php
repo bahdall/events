@@ -17,7 +17,7 @@ class EventsController extends Controller
 		$count = Event::model()->count($criteria);
 
 		$pagination = new CPagination($count);
-		$pagination->pageSize = 1;
+		$pagination->pageSize = 10;
 		$pagination->applyLimit($criteria);
 
 		$events = Event::model()->findAll($criteria);

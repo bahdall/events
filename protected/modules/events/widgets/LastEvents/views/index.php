@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-xs-12">
-                <h2 class="section-title wow zoomIn">Events gallery</h2>
+                <h2 class="section-title wow zoomIn">Events of TheHype Moscow</h2>
             </div>
         </div> <!-- /.row -->
 

@@ -65,8 +65,10 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse navbar-collapse">
 									<ul class="nav navbar-nav navbar-right">
-										<li><a class="page-scroll" href="#home">News</a></li>
-										<li><a class="page-scroll" href="#services">Contacts</a></li>
+										<li>
+											<a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/list', array('url' => 'news'))?>">News</a>
+										</li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/feedback')?>">Contacts</a></li>
 										<li><a class="page-scroll" href="#work">Vacancies</a></li>
 										<li><a class="page-scroll" href="#blog">TheHype.Ru Card</a></li>
 									</ul>
@@ -93,13 +95,10 @@
 								<div class="collapse navbar-collapse navbar-collapse">
 									<ul class="nav navbar-nav navbar-right">
 										<li><a class="page-scroll" href="">Home</a></li>
-										<li><a class="page-scroll" href="">About</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'about'))?>">About</a></li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/events/events/list')?>">Party Gallery</a></li>
 										<li><a class="page-scroll" href="">Party</a></li>
-										<li><a class="page-scroll" href="">Companies</a></li>
-										<li><a class="page-scroll" href="">Tips</a></li>
 										<li><a class="page-scroll" href="">Calender</a></li>
-										<li><a class="page-scroll" href="">Sightseeing</a></li>
 										<li><a class="page-scroll" href="">Fun</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->

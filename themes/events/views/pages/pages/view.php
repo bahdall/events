@@ -11,10 +11,20 @@ $this->pageKeywords    = $model->meta_keywords;
 $this->pageDescription = $model->meta_description;
 ?>
 
-<h1 class="has_background"><?php echo $model->title; ?></h1>
-<p>
-	<?php echo $model->short_description; ?>
-</p>
-<p>
-	<?php echo $model->full_description; ?>
-</p>
+<!-- Start article -->
+<article class="blog-post-wrapper">
+
+	<div class="entry-header">
+		<h2 class="entry-title"><?=$model->title?></h2>
+		<div class="entry-meta">
+			<ul class="list-inline">
+				<li><span class="the-time"><?=date("Y.m.d", strtotime($model->publish_date))?></span></li>
+			</ul>
+		</div><!-- /.entry-meta -->
+	</div><!-- /.entry-header -->
+	<div class="entry-content">
+		<?=$model->full_description?>
+	</div><!-- /.entry-content -->
+
+</article>
+<!-- End article -->

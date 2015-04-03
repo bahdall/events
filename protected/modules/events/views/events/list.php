@@ -6,12 +6,14 @@
  */
 
 // Set meta tags
-$this->pageTitle = ($model->meta_title) ? $model->meta_title : $model->name;
-$this->pageKeywords = $model->meta_keywords;
-$this->pageDescription = $model->meta_description;
+$this->pageTitle = "Events gallery";
+$this->pageKeywords = "Events gallery";
+$this->pageDescription = "Events gallery";
 ?>
 
-
+    <section>
+        <?$this->widget( 'application.modules.core.widgets.IncludeFile.IncludeFile' ,array('file' => 'events'))?>
+    </section>
 
     <!-- Last Events start -->
     <section id="events" class="testimonial-section">

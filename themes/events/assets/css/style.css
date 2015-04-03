@@ -1163,6 +1163,8 @@ Blog Page
 --------------------------------------------------------------------- */
 .blog-page {
 	padding-top: 50px;
+	padding-bottom: 50px;
+	min-height: 500px;
 }
 .blog-page .blog-post-wrapper {
     background-color: #f5f5f5;
@@ -1850,4 +1852,9 @@ BACK TO TOP
 }
 .navbar.navbar-mini .navbar-nav{
 	padding: 0;
+}
+
+
+.bb-welcome,.bb-welcome-text{
+	margin: 20px 0 0;
 }
