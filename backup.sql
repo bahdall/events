@@ -11,7 +11,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Дамп структуры для таблица events.loc.accounting1c
-DROP TABLE IF EXISTS `accounting1c`;
 CREATE TABLE IF NOT EXISTS `accounting1c` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -28,7 +27,6 @@ CREATE TABLE IF NOT EXISTS `accounting1c` (
 
 
 -- Дамп структуры для таблица events.loc.ActionLog
-DROP TABLE IF EXISTS `ActionLog`;
 CREATE TABLE IF NOT EXISTS `ActionLog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -41,9 +39,9 @@ CREATE TABLE IF NOT EXISTS `ActionLog` (
   KEY `event` (`event`),
   KEY `datetime` (`datetime`),
   KEY `model_name` (`model_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.ActionLog: 25 rows
+-- Дамп данных таблицы events.loc.ActionLog: 32 rows
 /*!40000 ALTER TABLE `ActionLog` DISABLE KEYS */;
 INSERT INTO `ActionLog` (`id`, `username`, `event`, `model_name`, `model_title`, `datetime`) VALUES
 	(1, 'admin', 3, 'SystemModules', 'pages', '2015-03-25 13:28:08'),
@@ -70,12 +68,26 @@ INSERT INTO `ActionLog` (`id`, `username`, `event`, `model_name`, `model_title`,
 	(22, 'admin', 1, 'SystemModules', 'orders', '2015-04-02 13:33:37'),
 	(23, 'admin', 3, 'SystemModules', 'discounts', '2015-04-02 16:53:30'),
 	(24, 'admin', 3, 'SystemModules', 'orders', '2015-04-02 16:58:24'),
-	(25, 'admin', 3, 'SystemModules', 'store', '2015-04-02 16:58:24');
+	(25, 'admin', 3, 'SystemModules', 'store', '2015-04-02 16:58:24'),
+	(26, 'admin', 3, 'Page', 'Google презентовал свои очки дополненной реальности‎', '2015-04-03 10:36:51'),
+	(27, 'admin', 3, 'Page', 'За 8,5 месяцев Android 4.0 попал на 11% устройств', '2015-04-03 10:36:51'),
+	(28, 'admin', 3, 'Page', 'Samsung пытается избежать запрета на Galaxy Nexus', '2015-04-03 10:36:51'),
+	(29, 'admin', 3, 'Page', 'Доставка и оплата', '2015-04-03 10:36:51'),
+	(30, 'admin', 3, 'Page', 'Гарантия', '2015-04-03 10:36:51'),
+	(31, 'admin', 2, 'Page', 'About', '2015-04-03 10:37:48'),
+	(32, 'admin', 2, 'SSystemLanguage', 'Русский', '2015-04-03 10:38:06'),
+	(33, 'admin', 2, 'Page', 'About', '2015-04-03 10:39:13'),
+	(34, 'admin', 2, 'PageCategory', 'News', '2015-04-03 11:10:01'),
+	(35, 'admin', 2, 'PageCategory', 'News', '2015-04-03 11:10:01'),
+	(36, 'admin', 2, 'PageCategory', 'Тесстовя2', '2015-04-03 11:10:01'),
+	(37, 'admin', 1, 'Page', 'First news', '2015-04-03 11:10:50'),
+	(38, 'admin', 2, 'Page', 'First news', '2015-04-03 11:35:33'),
+	(39, 'admin', 2, 'Page', 'First news', '2015-04-03 11:38:00'),
+	(40, 'admin', 1, 'Page', 'Second News', '2015-04-03 13:42:59');
 /*!40000 ALTER TABLE `ActionLog` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.AuthAssignment
-DROP TABLE IF EXISTS `AuthAssignment`;
 CREATE TABLE IF NOT EXISTS `AuthAssignment` (
   `itemname` varchar(64) NOT NULL,
   `userid` varchar(64) NOT NULL,
@@ -99,7 +111,6 @@ INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.AuthItem
-DROP TABLE IF EXISTS `AuthItem`;
 CREATE TABLE IF NOT EXISTS `AuthItem` (
   `name` varchar(64) NOT NULL,
   `type` int(11) NOT NULL,
@@ -134,7 +145,6 @@ INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.AuthItemChild
-DROP TABLE IF EXISTS `AuthItemChild`;
 CREATE TABLE IF NOT EXISTS `AuthItemChild` (
   `parent` varchar(64) NOT NULL,
   `child` varchar(64) NOT NULL,
@@ -148,7 +158,6 @@ CREATE TABLE IF NOT EXISTS `AuthItemChild` (
 
 
 -- Дамп структуры для таблица events.loc.Banners
-DROP TABLE IF EXISTS `Banners`;
 CREATE TABLE IF NOT EXISTS `Banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -165,7 +174,6 @@ INSERT INTO `Banners` (`id`, `name`, `status`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.BannersImages
-DROP TABLE IF EXISTS `BannersImages`;
 CREATE TABLE IF NOT EXISTS `BannersImages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL DEFAULT '0',
@@ -187,7 +195,6 @@ INSERT INTO `BannersImages` (`id`, `banner_id`, `image`, `sort`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.BannersImagesTranslate
-DROP TABLE IF EXISTS `BannersImagesTranslate`;
 CREATE TABLE IF NOT EXISTS `BannersImagesTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -217,7 +224,6 @@ INSERT INTO `BannersImagesTranslate` (`id`, `object_id`, `language_id`, `title`,
 
 
 -- Дамп структуры для таблица events.loc.Comments
-DROP TABLE IF EXISTS `Comments`;
 CREATE TABLE IF NOT EXISTS `Comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT '0',
@@ -241,7 +247,6 @@ CREATE TABLE IF NOT EXISTS `Comments` (
 
 
 -- Дамп структуры для таблица events.loc.Discount
-DROP TABLE IF EXISTS `Discount`;
 CREATE TABLE IF NOT EXISTS `Discount` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -264,7 +269,6 @@ INSERT INTO `Discount` (`id`, `name`, `active`, `sum`, `start_date`, `end_date`,
 
 
 -- Дамп структуры для таблица events.loc.DiscountCategory
-DROP TABLE IF EXISTS `DiscountCategory`;
 CREATE TABLE IF NOT EXISTS `DiscountCategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `discount_id` int(11) DEFAULT NULL,
@@ -290,7 +294,6 @@ INSERT INTO `DiscountCategory` (`id`, `discount_id`, `category_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.DiscountManufacturer
-DROP TABLE IF EXISTS `DiscountManufacturer`;
 CREATE TABLE IF NOT EXISTS `DiscountManufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `discount_id` int(11) DEFAULT NULL,
@@ -308,7 +311,6 @@ INSERT INTO `DiscountManufacturer` (`id`, `discount_id`, `manufacturer_id`) VALU
 
 
 -- Дамп структуры для таблица events.loc.Event
-DROP TABLE IF EXISTS `Event`;
 CREATE TABLE IF NOT EXISTS `Event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
@@ -331,14 +333,13 @@ INSERT INTO `Event` (`id`, `title`, `meta_title`, `meta_keywords`, `meta_descrip
 
 
 -- Дамп структуры для таблица events.loc.EventImage
-DROP TABLE IF EXISTS `EventImage`;
 CREATE TABLE IF NOT EXISTS `EventImage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_id` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `event_id` (`event_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы events.loc.EventImage: ~13 rows (приблизительно)
 /*!40000 ALTER TABLE `EventImage` DISABLE KEYS */;
@@ -360,7 +361,6 @@ INSERT INTO `EventImage` (`id`, `event_id`, `image`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.grid_view_filter
-DROP TABLE IF EXISTS `grid_view_filter`;
 CREATE TABLE IF NOT EXISTS `grid_view_filter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -376,7 +376,6 @@ CREATE TABLE IF NOT EXISTS `grid_view_filter` (
 
 
 -- Дамп структуры для таблица events.loc.Order
-DROP TABLE IF EXISTS `Order`;
 CREATE TABLE IF NOT EXISTS `Order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -409,7 +408,6 @@ CREATE TABLE IF NOT EXISTS `Order` (
 
 
 -- Дамп структуры для таблица events.loc.OrderHistory
-DROP TABLE IF EXISTS `OrderHistory`;
 CREATE TABLE IF NOT EXISTS `OrderHistory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) DEFAULT NULL,
@@ -430,7 +428,6 @@ CREATE TABLE IF NOT EXISTS `OrderHistory` (
 
 
 -- Дамп структуры для таблица events.loc.OrderProduct
-DROP TABLE IF EXISTS `OrderProduct`;
 CREATE TABLE IF NOT EXISTS `OrderProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -455,7 +452,6 @@ CREATE TABLE IF NOT EXISTS `OrderProduct` (
 
 
 -- Дамп структуры для таблица events.loc.OrderStatus
-DROP TABLE IF EXISTS `OrderStatus`;
 CREATE TABLE IF NOT EXISTS `OrderStatus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -473,7 +469,6 @@ INSERT INTO `OrderStatus` (`id`, `name`, `position`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.Page
-DROP TABLE IF EXISTS `Page`;
 CREATE TABLE IF NOT EXISTS `Page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -493,23 +488,19 @@ CREATE TABLE IF NOT EXISTS `Page` (
   KEY `updated` (`updated`),
   KEY `publish_date` (`publish_date`),
   KEY `status` (`status`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.Page: 7 rows
+-- Дамп данных таблицы events.loc.Page: 2 rows
 /*!40000 ALTER TABLE `Page` DISABLE KEYS */;
 INSERT INTO `Page` (`id`, `user_id`, `category_id`, `url`, `created`, `updated`, `publish_date`, `status`, `layout`, `view`) VALUES
-	(8, 1, NULL, 'help', '2012-06-10 22:35:51', '2012-07-07 11:47:09', '2012-06-10 22:35:29', 'published', '', ''),
+	(8, 1, NULL, 'about', '2012-06-10 22:35:51', '2015-04-03 10:39:13', '2012-06-10 22:35:29', 'published', '', ''),
 	(9, 1, NULL, 'how-to-create-order', '2012-06-10 22:36:50', '2012-07-07 11:45:53', '2012-06-10 22:36:27', 'published', '', ''),
-	(10, 1, NULL, 'garantiya', '2012-06-10 22:37:06', '2012-07-07 11:45:38', '2012-06-10 22:36:50', 'published', '', ''),
-	(11, 1, NULL, 'dostavka-i-oplata', '2012-06-10 22:37:18', '2012-07-07 11:41:49', '2012-06-10 22:37:07', 'published', '', ''),
-	(12, 1, 7, 'samsung-pitaetsya-izbezhat-zapreta-na-galaxy-nexus-v-shtatah-pri-pomoshi-patcha', '2012-07-07 12:08:50', '2012-07-07 12:09:33', '2012-07-07 12:06:19', 'published', '', ''),
-	(13, 1, 7, 'za-85-mesyacev-android-40-popal-na-11-ustroistv', '2012-07-07 12:19:44', '2013-06-04 23:20:21', '2012-07-07 12:14:48', 'published', '', ''),
-	(14, 1, 7, 'google-prezentoval-svoi-ochki-dopolnennoi-realnosti', '2012-07-07 12:26:11', '2012-07-07 12:26:11', '2012-07-07 12:25:48', 'published', '', '');
+	(15, 1, 7, 'first-news', '2015-04-03 11:10:50', '2015-04-03 11:38:00', '2015-04-03 11:10:13', 'published', '', ''),
+	(16, 1, 7, 'second-news', '2015-04-03 13:42:59', '2015-04-03 13:42:59', '2015-04-03 13:42:18', 'published', '', '');
 /*!40000 ALTER TABLE `Page` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.PageCategory
-DROP TABLE IF EXISTS `PageCategory`;
 CREATE TABLE IF NOT EXISTS `PageCategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -530,14 +521,12 @@ CREATE TABLE IF NOT EXISTS `PageCategory` (
 -- Дамп данных таблицы events.loc.PageCategory: 3 rows
 /*!40000 ALTER TABLE `PageCategory` DISABLE KEYS */;
 INSERT INTO `PageCategory` (`id`, `parent_id`, `url`, `full_url`, `layout`, `view`, `created`, `updated`, `page_size`) VALUES
-	(7, NULL, 'news', 'news', '', '', '2012-07-07 12:06:03', '2013-04-29 23:24:05', NULL),
-	(10, NULL, 'tesstovya2', 'tesstovya2', '', '', '2013-05-21 23:59:34', '2013-05-21 23:59:34', NULL),
-	(12, 7, 'tesstovya2', 'news/tesstovya2', '', '', '2013-05-22 00:07:01', '2013-05-22 00:07:01', NULL);
+	(7, NULL, 'news', 'news', '', '', '2012-07-07 12:06:03', '2015-04-03 11:10:01', NULL),
+	(10, NULL, 'tesstovya2', 'tesstovya2', '', '', '2013-05-21 23:59:34', '2013-05-21 23:59:34', NULL);
 /*!40000 ALTER TABLE `PageCategory` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.PageCategoryTranslate
-DROP TABLE IF EXISTS `PageCategoryTranslate`;
 CREATE TABLE IF NOT EXISTS `PageCategoryTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -556,7 +545,7 @@ CREATE TABLE IF NOT EXISTS `PageCategoryTranslate` (
 /*!40000 ALTER TABLE `PageCategoryTranslate` DISABLE KEYS */;
 INSERT INTO `PageCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keywords`) VALUES
 	(13, 7, 1, 'Новости', '', '', '', ''),
-	(14, 7, 9, 'Новости', '', '', '', ''),
+	(14, 7, 9, 'News', '', '', '', ''),
 	(15, 11, 1, 'sdfsdf', '', '', '', ''),
 	(16, 11, 9, 'sdfsdf', '', '', '', ''),
 	(17, 12, 1, 'Тесстовя2', '', '', '', ''),
@@ -565,7 +554,6 @@ INSERT INTO `PageCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, `
 
 
 -- Дамп структуры для таблица events.loc.PageTranslate
-DROP TABLE IF EXISTS `PageTranslate`;
 CREATE TABLE IF NOT EXISTS `PageTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -579,30 +567,23 @@ CREATE TABLE IF NOT EXISTS `PageTranslate` (
   PRIMARY KEY (`id`),
   KEY `object_id` (`object_id`),
   KEY `language_id` (`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.PageTranslate: 14 rows
+-- Дамп данных таблицы events.loc.PageTranslate: 4 rows
 /*!40000 ALTER TABLE `PageTranslate` DISABLE KEYS */;
 INSERT INTO `PageTranslate` (`id`, `object_id`, `language_id`, `title`, `short_description`, `full_description`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
-	(22, 11, 9, 'Доставка и оплата', '', '', '', '', ''),
-	(15, 8, 1, 'Помощь', 'Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).', '', '', '', ''),
-	(16, 8, 9, 'Помощь', '', '', '', '', ''),
+	(15, 8, 1, 'About', '<p>TheHype is an events company delighted to bring high\r\nquality social events to expats, international visitors and English speakers\r\nacross the Moscow region.</p>', '<p>TheHype is an events company delighted to bring high\r\nquality social events to expats, international visitors and English speakers\r\nacross the Moscow region.</p>\r\n<p>&nbsp;</p>\r\n<p>We are run by expats for expats, with quizzes, comedy\r\nnights, pub crawls, themed parties, live music, language exchanges and more: we\r\nare happy to hear your own suggestions!</p>\r\n<p>&nbsp;</p>\r\n<p>Our events take place in English and welcome English\r\nspeakers in Moscow of any nationality. Our aim at TheHype is simple: to offer\r\nyou events that are as memorable, enjoyable and fun as possible.</p>', '', '', ''),
+	(16, 8, 9, 'About', '', '<p>TheHype is an events company delighted to bring high\r\nquality social events to expats, international visitors and English speakers\r\nacross the Moscow region.</p>\r\n<p>&nbsp;</p>\r\n<p>We are run by expats for expats, with quizzes, comedy\r\nnights, pub crawls, themed parties, live music, language exchanges and more: we\r\nare happy to hear your own suggestions!</p>\r\n<p>&nbsp;</p>\r\n<p>Our events take place in English and welcome English\r\nspeakers in Moscow of any nationality. Our aim at TheHype is simple: to offer\r\nyou events that are as memorable, enjoyable and fun as possible.</p>', '', '', ''),
 	(17, 9, 1, 'Как сделать заказ', '<p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.</p>', '', '', '', ''),
 	(18, 9, 9, 'Как сделать заказ', '', '', '', '', ''),
-	(19, 10, 1, 'Гарантия', '<p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе.</p>\r\n<p>В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32 Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>', '', '', '', ''),
-	(20, 10, 9, 'Гарантия', '', '', '', '', ''),
-	(21, 11, 1, 'Доставка и оплата', '<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).</p>', '', '', '', ''),
-	(23, 12, 1, 'Samsung пытается избежать запрета на Galaxy Nexus', 'Текущую ситуацию с судебным противостоянием Apple и Samsung в Штатах (ссылка по теме) можно описать строчкой их двух слов: всё плохо. ', 'В смысле всё плохо для Samsung — южнокорейская корпорация так и не сумела отбиться от назначенного судом предварительного запрета на американские продажи планшетников Galaxy Tab 10.1 и, главное, новейших смартфонов Galaxy Nexus. Расклад намечается хуже некуда: по некоторым выкладкам, потенциальный ущерб от подобного запрета может достигнуть 180 млн. долларов, две трети из которых придутся на непроданные Galaxy Nexus.', '', '', ''),
-	(25, 13, 1, 'За 8,5 месяцев Android 4.0 попал на 11% устройств', 'В свое время платформа Android 2.x распространялась активнее, чем Android 4.0 Ice Cream Sandwich, а ведь уже появилась новая мобильная ОС от Google — Android 4.1 Jelly Bean. За 8,5 месяцев своего существования Android ICS попал на 10,9% устройств, а лидировать на рынке продолжает Android 2,3 Gingerbread.', '', '', '', ''),
-	(24, 12, 9, 'Samsung пытается избежать запрета на Galaxy Nexus в Штатах при помощи патча', 'Текущую ситуацию с судебным противостоянием Apple и Samsung в Штатах (ссылка по теме) можно описать строчкой их двух слов: всё плохо. В смысле всё плохо для Samsung — южнокорейская корпорация так и не сумела отбиться от назначенного судом предварительного запрета на американские продажи планшетников Galaxy Tab 10.1 и, главное, новейших смартфонов Galaxy Nexus. Расклад намечается хуже некуда: по некоторым выкладкам, потенциальный ущерб от подобного запрета может достигнуть 180 млн. долларов, две трети из которых придутся на непроданные Galaxy Nexus.', '', '', '', ''),
-	(26, 13, 9, 'За 8,5 месяцев Android 4.0 попал на 11% устройств', 'В свое время платформа Android 2.x распространялась активнее, чем Android 4.0 Ice Cream Sandwich, а ведь уже появилась новая мобильная ОС от Google — Android 4.1 Jelly Bean. За 8,5 месяцев своего существования Android ICS попал на 10,9% устройств, а лидировать на рынке продолжает Android 2,3 Gingerbread.', '', '', '', ''),
-	(27, 14, 1, 'Google презентовал свои очки дополненной реальности‎', 'Компания Google приступит к продаже очков дополненной реальности, который разрабатываются в рамках проекта Google Project Glass, пишет блог All Things Digital. ', 'Очки будут стоить 1,5 тысячи долларов, и поставки стартуют в начале 2013 года. Устройство, однако, будет предназначено только для разработчиков. Оформить предварительный заказ на него смогут исключительно посетители конференции I/O, открывшейся 27 июня в Сан-Франциско. ', '', '', ''),
-	(28, 14, 9, 'Google презентовал свои очки дополненной реальности‎', 'Компания Google приступит к продаже очков дополненной реальности, который разрабатываются в рамках проекта Google Project Glass, пишет блог All Things Digital. ', 'Очки будут стоить 1,5 тысячи долларов, и поставки стартуют в начале 2013 года. Устройство, однако, будет предназначено только для разработчиков. Оформить предварительный заказ на него смогут исключительно посетители конференции I/O, открывшейся 27 июня в Сан-Франциско. ', '', '', '');
+	(29, 15, 1, 'First news', 'Test news', 'Test news', '', '', ''),
+	(30, 15, 9, 'First news', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>', '<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div><div><br></div><div>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</div><div><br></div><div>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</div><div><br></div><div>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</div><div><br></div><div>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</div>', '', '', ''),
+	(31, 16, 1, 'Second News', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>', '<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div><div><br></div><div>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</div><div><br></div><div>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</div><div><br></div><div>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</div><div><br></div><div>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</div>', '', '', ''),
+	(32, 16, 9, 'Second News', '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>', '<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div><div><br></div><div>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</div><div><br></div><div>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</div><div><br></div><div>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</div><div><br></div><div>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</div>', '', '', '');
 /*!40000 ALTER TABLE `PageTranslate` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.Rights
-DROP TABLE IF EXISTS `Rights`;
 CREATE TABLE IF NOT EXISTS `Rights` (
   `itemname` varchar(64) NOT NULL,
   `type` int(11) DEFAULT NULL,
@@ -616,7 +597,6 @@ CREATE TABLE IF NOT EXISTS `Rights` (
 
 
 -- Дамп структуры для таблица events.loc.StoreAttribute
-DROP TABLE IF EXISTS `StoreAttribute`;
 CREATE TABLE IF NOT EXISTS `StoreAttribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -663,7 +643,6 @@ INSERT INTO `StoreAttribute` (`id`, `name`, `type`, `display_on_front`, `use_in_
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeOption
-DROP TABLE IF EXISTS `StoreAttributeOption`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeOption` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_id` int(11) DEFAULT NULL,
@@ -755,7 +734,6 @@ INSERT INTO `StoreAttributeOption` (`id`, `attribute_id`, `position`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeOptionTranslate
-DROP TABLE IF EXISTS `StoreAttributeOptionTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeOptionTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) DEFAULT NULL,
@@ -923,7 +901,6 @@ INSERT INTO `StoreAttributeOptionTranslate` (`id`, `language_id`, `object_id`, `
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeTranslate
-DROP TABLE IF EXISTS `StoreAttributeTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -979,7 +956,6 @@ INSERT INTO `StoreAttributeTranslate` (`id`, `object_id`, `language_id`, `title`
 
 
 -- Дамп структуры для таблица events.loc.StoreCategory
-DROP TABLE IF EXISTS `StoreCategory`;
 CREATE TABLE IF NOT EXISTS `StoreCategory` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `lft` int(10) unsigned DEFAULT NULL,
@@ -1014,7 +990,6 @@ INSERT INTO `StoreCategory` (`id`, `lft`, `rgt`, `level`, `url`, `full_path`, `l
 
 
 -- Дамп структуры для таблица events.loc.StoreCategoryTranslate
-DROP TABLE IF EXISTS `StoreCategoryTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreCategoryTranslate` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1059,7 +1034,6 @@ INSERT INTO `StoreCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, 
 
 
 -- Дамп структуры для таблица events.loc.StoreCurrency
-DROP TABLE IF EXISTS `StoreCurrency`;
 CREATE TABLE IF NOT EXISTS `StoreCurrency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -1080,7 +1054,6 @@ INSERT INTO `StoreCurrency` (`id`, `name`, `iso`, `symbol`, `rate`, `main`, `def
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryMethod
-DROP TABLE IF EXISTS `StoreDeliveryMethod`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryMethod` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `price` float(10,2) DEFAULT '0.00',
@@ -1101,7 +1074,6 @@ INSERT INTO `StoreDeliveryMethod` (`id`, `price`, `free_from`, `position`, `acti
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryMethodTranslate
-DROP TABLE IF EXISTS `StoreDeliveryMethodTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryMethodTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1126,7 +1098,6 @@ INSERT INTO `StoreDeliveryMethodTranslate` (`id`, `object_id`, `language_id`, `n
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryPayment
-DROP TABLE IF EXISTS `StoreDeliveryPayment`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryPayment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `delivery_id` int(11) DEFAULT NULL,
@@ -1160,7 +1131,6 @@ INSERT INTO `StoreDeliveryPayment` (`id`, `delivery_id`, `payment_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreManufacturer
-DROP TABLE IF EXISTS `StoreManufacturer`;
 CREATE TABLE IF NOT EXISTS `StoreManufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT '',
@@ -1195,7 +1165,6 @@ INSERT INTO `StoreManufacturer` (`id`, `url`, `layout`, `view`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreManufacturerTranslate
-DROP TABLE IF EXISTS `StoreManufacturerTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreManufacturerTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1253,7 +1222,6 @@ INSERT INTO `StoreManufacturerTranslate` (`id`, `object_id`, `language_id`, `nam
 
 
 -- Дамп структуры для таблица events.loc.StorePaymentMethod
-DROP TABLE IF EXISTS `StorePaymentMethod`;
 CREATE TABLE IF NOT EXISTS `StorePaymentMethod` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `currency_id` int(11) DEFAULT NULL,
@@ -1276,7 +1244,6 @@ INSERT INTO `StorePaymentMethod` (`id`, `currency_id`, `active`, `payment_system
 
 
 -- Дамп структуры для таблица events.loc.StorePaymentMethodTranslate
-DROP TABLE IF EXISTS `StorePaymentMethodTranslate`;
 CREATE TABLE IF NOT EXISTS `StorePaymentMethodTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1305,7 +1272,6 @@ INSERT INTO `StorePaymentMethodTranslate` (`id`, `object_id`, `language_id`, `na
 
 
 -- Дамп структуры для таблица events.loc.StoreProduct
-DROP TABLE IF EXISTS `StoreProduct`;
 CREATE TABLE IF NOT EXISTS `StoreProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturer_id` int(11) DEFAULT NULL,
@@ -1393,7 +1359,6 @@ INSERT INTO `StoreProduct` (`id`, `manufacturer_id`, `type_id`, `use_configurati
 
 
 -- Дамп структуры для таблица events.loc.StoreProductAttributeEAV
-DROP TABLE IF EXISTS `StoreProductAttributeEAV`;
 CREATE TABLE IF NOT EXISTS `StoreProductAttributeEAV` (
   `entity` int(11) unsigned NOT NULL,
   `attribute` varchar(250) DEFAULT '',
@@ -1593,7 +1558,6 @@ INSERT INTO `StoreProductAttributeEAV` (`entity`, `attribute`, `value`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreProductCategoryRef
-DROP TABLE IF EXISTS `StoreProductCategoryRef`;
 CREATE TABLE IF NOT EXISTS `StoreProductCategoryRef` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product` int(11) DEFAULT NULL,
@@ -1682,7 +1646,6 @@ INSERT INTO `StoreProductCategoryRef` (`id`, `product`, `category`, `is_main`) V
 
 
 -- Дамп структуры для таблица events.loc.StoreProductConfigurableAttributes
-DROP TABLE IF EXISTS `StoreProductConfigurableAttributes`;
 CREATE TABLE IF NOT EXISTS `StoreProductConfigurableAttributes` (
   `product_id` int(11) NOT NULL COMMENT 'Attributes available to configure product',
   `attribute_id` int(11) NOT NULL,
@@ -1695,7 +1658,6 @@ CREATE TABLE IF NOT EXISTS `StoreProductConfigurableAttributes` (
 
 
 -- Дамп структуры для таблица events.loc.StoreProductConfigurations
-DROP TABLE IF EXISTS `StoreProductConfigurations`;
 CREATE TABLE IF NOT EXISTS `StoreProductConfigurations` (
   `product_id` int(11) NOT NULL COMMENT 'Saves relations beetwen product and configurations',
   `configurable_id` int(11) NOT NULL,
@@ -1708,7 +1670,6 @@ CREATE TABLE IF NOT EXISTS `StoreProductConfigurations` (
 
 
 -- Дамп структуры для таблица events.loc.StoreProductImage
-DROP TABLE IF EXISTS `StoreProductImage`;
 CREATE TABLE IF NOT EXISTS `StoreProductImage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
@@ -1771,7 +1732,6 @@ INSERT INTO `StoreProductImage` (`id`, `product_id`, `name`, `is_main`, `uploade
 
 
 -- Дамп структуры для таблица events.loc.StoreProductTranslate
-DROP TABLE IF EXISTS `StoreProductTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreProductTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1882,7 +1842,6 @@ INSERT INTO `StoreProductTranslate` (`id`, `object_id`, `language_id`, `name`, `
 
 
 -- Дамп структуры для таблица events.loc.StoreProductType
-DROP TABLE IF EXISTS `StoreProductType`;
 CREATE TABLE IF NOT EXISTS `StoreProductType` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -1904,7 +1863,6 @@ INSERT INTO `StoreProductType` (`id`, `name`, `categories_preset`, `main_categor
 
 
 -- Дамп структуры для таблица events.loc.StoreProductVariant
-DROP TABLE IF EXISTS `StoreProductVariant`;
 CREATE TABLE IF NOT EXISTS `StoreProductVariant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_id` int(11) DEFAULT NULL,
@@ -1925,7 +1883,6 @@ CREATE TABLE IF NOT EXISTS `StoreProductVariant` (
 
 
 -- Дамп структуры для таблица events.loc.StoreRelatedProduct
-DROP TABLE IF EXISTS `StoreRelatedProduct`;
 CREATE TABLE IF NOT EXISTS `StoreRelatedProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
@@ -1940,7 +1897,6 @@ CREATE TABLE IF NOT EXISTS `StoreRelatedProduct` (
 
 
 -- Дамп структуры для таблица events.loc.StoreTypeAttribute
-DROP TABLE IF EXISTS `StoreTypeAttribute`;
 CREATE TABLE IF NOT EXISTS `StoreTypeAttribute` (
   `type_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -1973,7 +1929,6 @@ INSERT INTO `StoreTypeAttribute` (`type_id`, `attribute_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreWishlist
-DROP TABLE IF EXISTS `StoreWishlist`;
 CREATE TABLE IF NOT EXISTS `StoreWishlist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(10) DEFAULT '',
@@ -1989,7 +1944,6 @@ CREATE TABLE IF NOT EXISTS `StoreWishlist` (
 
 
 -- Дамп структуры для таблица events.loc.StoreWishlistProducts
-DROP TABLE IF EXISTS `StoreWishlistProducts`;
 CREATE TABLE IF NOT EXISTS `StoreWishlistProducts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `wishlist_id` int(11) DEFAULT NULL,
@@ -2007,7 +1961,6 @@ CREATE TABLE IF NOT EXISTS `StoreWishlistProducts` (
 
 
 -- Дамп структуры для таблица events.loc.SystemLanguage
-DROP TABLE IF EXISTS `SystemLanguage`;
 CREATE TABLE IF NOT EXISTS `SystemLanguage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '',
@@ -2022,13 +1975,12 @@ CREATE TABLE IF NOT EXISTS `SystemLanguage` (
 -- Дамп данных таблицы events.loc.SystemLanguage: 2 rows
 /*!40000 ALTER TABLE `SystemLanguage` DISABLE KEYS */;
 INSERT INTO `SystemLanguage` (`id`, `name`, `code`, `locale`, `default`, `flag_name`) VALUES
-	(1, 'Русский', 'ru', 'ru', 1, 'ru.png'),
-	(9, 'English', 'en', 'en', 0, 'us.png');
+	(1, 'Русский', 'ru', 'ru', 0, 'ru.png'),
+	(9, 'English', 'en', 'en', 1, 'us.png');
 /*!40000 ALTER TABLE `SystemLanguage` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.SystemLayouts
-DROP TABLE IF EXISTS `SystemLayouts`;
 CREATE TABLE IF NOT EXISTS `SystemLayouts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -2046,7 +1998,6 @@ INSERT INTO `SystemLayouts` (`id`, `name`, `route`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemLayoutsWidgets
-DROP TABLE IF EXISTS `SystemLayoutsWidgets`;
 CREATE TABLE IF NOT EXISTS `SystemLayoutsWidgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -2068,7 +2019,6 @@ INSERT INTO `SystemLayoutsWidgets` (`id`, `layout_id`, `widget_id`, `position`, 
 
 
 -- Дамп структуры для таблица events.loc.SystemModules
-DROP TABLE IF EXISTS `SystemModules`;
 CREATE TABLE IF NOT EXISTS `SystemModules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -2096,7 +2046,6 @@ INSERT INTO `SystemModules` (`id`, `name`, `enabled`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemSettings
-DROP TABLE IF EXISTS `SystemSettings`;
 CREATE TABLE IF NOT EXISTS `SystemSettings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(255) DEFAULT '',
@@ -2155,7 +2104,6 @@ INSERT INTO `SystemSettings` (`id`, `category`, `key`, `value`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemWidgets
-DROP TABLE IF EXISTS `SystemWidgets`;
 CREATE TABLE IF NOT EXISTS `SystemWidgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL,
@@ -2169,7 +2117,7 @@ CREATE TABLE IF NOT EXISTS `SystemWidgets` (
   KEY `module_id` (`module_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.SystemWidgets: ~1 rows (приблизительно)
+-- Дамп данных таблицы events.loc.SystemWidgets: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `SystemWidgets` DISABLE KEYS */;
 INSERT INTO `SystemWidgets` (`id`, `module_id`, `group`, `name`, `description`, `class`, `params`, `status`) VALUES
 	(5, 62, 'sliders', 'home slider', NULL, 'application.modules.banners.widgets.nivoslider.ENivoSlider', 'a:3:{s:5:"width";s:4:"1000";s:6:"height";s:3:"500";s:9:"banner_id";s:1:"2";}', 1);
@@ -2177,7 +2125,6 @@ INSERT INTO `SystemWidgets` (`id`, `module_id`, `group`, `name`, `description`, 
 
 
 -- Дамп структуры для таблица events.loc.tbl_migration
-DROP TABLE IF EXISTS `tbl_migration`;
 CREATE TABLE IF NOT EXISTS `tbl_migration` (
   `version` varchar(255) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
@@ -2204,7 +2151,6 @@ INSERT INTO `tbl_migration` (`version`, `apply_time`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.user
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT '',
@@ -2223,12 +2169,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Дамп данных таблицы events.loc.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `login_ip`, `recovery_key`, `recovery_password`, `discount`, `banned`) VALUES
-	(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@mail.ru', '2015-03-25 12:44:10', '2015-04-02 10:10:38', '127.0.0.1', NULL, NULL, NULL, 0);
+	(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@mail.ru', '2015-03-25 12:44:10', '2015-04-03 10:36:25', '127.0.0.1', NULL, NULL, NULL, 0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица events.loc.user_profile
-DROP TABLE IF EXISTS `user_profile`;
 CREATE TABLE IF NOT EXISTS `user_profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,

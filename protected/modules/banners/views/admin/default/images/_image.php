@@ -26,7 +26,7 @@ if(!$model->id)$id = substr(str_replace(' ','',microtime()),rand(2,5));
         <?php// echo CHtml::textField('images['.$id.'][image]',$model->image,array('class' => 'j-image')) ?>
         <?php
         //server file input
-        $this->widget('ext.elFinder.ServerFileInput', array(
+        $this->widget('ext.elfinder.ServerFileInput', array(
                 'attribute' => 'image',
                 'connectorRoute' => 'filemanager/elfinderconnector',
                 'htmlOptions' => array(
