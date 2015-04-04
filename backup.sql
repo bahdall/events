@@ -11,6 +11,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Дамп структуры для таблица events.loc.accounting1c
+DROP TABLE IF EXISTS `accounting1c`;
 CREATE TABLE IF NOT EXISTS `accounting1c` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -27,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `accounting1c` (
 
 
 -- Дамп структуры для таблица events.loc.ActionLog
+DROP TABLE IF EXISTS `ActionLog`;
 CREATE TABLE IF NOT EXISTS `ActionLog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -107,6 +109,7 @@ INSERT INTO `ActionLog` (`id`, `username`, `event`, `model_name`, `model_title`,
 
 
 -- Дамп структуры для таблица events.loc.AuthAssignment
+DROP TABLE IF EXISTS `AuthAssignment`;
 CREATE TABLE IF NOT EXISTS `AuthAssignment` (
   `itemname` varchar(64) NOT NULL,
   `userid` varchar(64) NOT NULL,
@@ -130,6 +133,7 @@ INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.AuthItem
+DROP TABLE IF EXISTS `AuthItem`;
 CREATE TABLE IF NOT EXISTS `AuthItem` (
   `name` varchar(64) NOT NULL,
   `type` int(11) NOT NULL,
@@ -164,6 +168,7 @@ INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.AuthItemChild
+DROP TABLE IF EXISTS `AuthItemChild`;
 CREATE TABLE IF NOT EXISTS `AuthItemChild` (
   `parent` varchar(64) NOT NULL,
   `child` varchar(64) NOT NULL,
@@ -177,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `AuthItemChild` (
 
 
 -- Дамп структуры для таблица events.loc.Banners
+DROP TABLE IF EXISTS `Banners`;
 CREATE TABLE IF NOT EXISTS `Banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -193,6 +199,7 @@ INSERT INTO `Banners` (`id`, `name`, `status`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.BannersImages
+DROP TABLE IF EXISTS `BannersImages`;
 CREATE TABLE IF NOT EXISTS `BannersImages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL DEFAULT '0',
@@ -214,6 +221,7 @@ INSERT INTO `BannersImages` (`id`, `banner_id`, `image`, `sort`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.BannersImagesTranslate
+DROP TABLE IF EXISTS `BannersImagesTranslate`;
 CREATE TABLE IF NOT EXISTS `BannersImagesTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -243,6 +251,7 @@ INSERT INTO `BannersImagesTranslate` (`id`, `object_id`, `language_id`, `title`,
 
 
 -- Дамп структуры для таблица events.loc.Comments
+DROP TABLE IF EXISTS `Comments`;
 CREATE TABLE IF NOT EXISTS `Comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT '0',
@@ -266,6 +275,7 @@ CREATE TABLE IF NOT EXISTS `Comments` (
 
 
 -- Дамп структуры для таблица events.loc.Discount
+DROP TABLE IF EXISTS `Discount`;
 CREATE TABLE IF NOT EXISTS `Discount` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -288,6 +298,7 @@ INSERT INTO `Discount` (`id`, `name`, `active`, `sum`, `start_date`, `end_date`,
 
 
 -- Дамп структуры для таблица events.loc.DiscountCategory
+DROP TABLE IF EXISTS `DiscountCategory`;
 CREATE TABLE IF NOT EXISTS `DiscountCategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `discount_id` int(11) DEFAULT NULL,
@@ -313,6 +324,7 @@ INSERT INTO `DiscountCategory` (`id`, `discount_id`, `category_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.DiscountManufacturer
+DROP TABLE IF EXISTS `DiscountManufacturer`;
 CREATE TABLE IF NOT EXISTS `DiscountManufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `discount_id` int(11) DEFAULT NULL,
@@ -330,6 +342,7 @@ INSERT INTO `DiscountManufacturer` (`id`, `discount_id`, `manufacturer_id`) VALU
 
 
 -- Дамп структуры для таблица events.loc.Event
+DROP TABLE IF EXISTS `Event`;
 CREATE TABLE IF NOT EXISTS `Event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
@@ -352,6 +365,7 @@ INSERT INTO `Event` (`id`, `title`, `meta_title`, `meta_keywords`, `meta_descrip
 
 
 -- Дамп структуры для таблица events.loc.EventImage
+DROP TABLE IF EXISTS `EventImage`;
 CREATE TABLE IF NOT EXISTS `EventImage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_id` int(11) NOT NULL,
@@ -380,6 +394,7 @@ INSERT INTO `EventImage` (`id`, `event_id`, `image`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.grid_view_filter
+DROP TABLE IF EXISTS `grid_view_filter`;
 CREATE TABLE IF NOT EXISTS `grid_view_filter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -395,6 +410,7 @@ CREATE TABLE IF NOT EXISTS `grid_view_filter` (
 
 
 -- Дамп структуры для таблица events.loc.Order
+DROP TABLE IF EXISTS `Order`;
 CREATE TABLE IF NOT EXISTS `Order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -427,6 +443,7 @@ CREATE TABLE IF NOT EXISTS `Order` (
 
 
 -- Дамп структуры для таблица events.loc.OrderHistory
+DROP TABLE IF EXISTS `OrderHistory`;
 CREATE TABLE IF NOT EXISTS `OrderHistory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) DEFAULT NULL,
@@ -447,6 +464,7 @@ CREATE TABLE IF NOT EXISTS `OrderHistory` (
 
 
 -- Дамп структуры для таблица events.loc.OrderProduct
+DROP TABLE IF EXISTS `OrderProduct`;
 CREATE TABLE IF NOT EXISTS `OrderProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -471,6 +489,7 @@ CREATE TABLE IF NOT EXISTS `OrderProduct` (
 
 
 -- Дамп структуры для таблица events.loc.OrderStatus
+DROP TABLE IF EXISTS `OrderStatus`;
 CREATE TABLE IF NOT EXISTS `OrderStatus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -488,6 +507,7 @@ INSERT INTO `OrderStatus` (`id`, `name`, `position`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.Page
+DROP TABLE IF EXISTS `Page`;
 CREATE TABLE IF NOT EXISTS `Page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -526,6 +546,7 @@ INSERT INTO `Page` (`id`, `user_id`, `category_id`, `url`, `created`, `updated`,
 
 
 -- Дамп структуры для таблица events.loc.PageCategory
+DROP TABLE IF EXISTS `PageCategory`;
 CREATE TABLE IF NOT EXISTS `PageCategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -553,6 +574,7 @@ INSERT INTO `PageCategory` (`id`, `parent_id`, `url`, `full_url`, `layout`, `vie
 
 
 -- Дамп структуры для таблица events.loc.PageCategoryTranslate
+DROP TABLE IF EXISTS `PageCategoryTranslate`;
 CREATE TABLE IF NOT EXISTS `PageCategoryTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -582,6 +604,7 @@ INSERT INTO `PageCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, `
 
 
 -- Дамп структуры для таблица events.loc.PageTranslate
+DROP TABLE IF EXISTS `PageTranslate`;
 CREATE TABLE IF NOT EXISTS `PageTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) NOT NULL,
@@ -624,6 +647,7 @@ INSERT INTO `PageTranslate` (`id`, `object_id`, `language_id`, `title`, `short_d
 
 
 -- Дамп структуры для таблица events.loc.Rights
+DROP TABLE IF EXISTS `Rights`;
 CREATE TABLE IF NOT EXISTS `Rights` (
   `itemname` varchar(64) NOT NULL,
   `type` int(11) DEFAULT NULL,
@@ -637,6 +661,7 @@ CREATE TABLE IF NOT EXISTS `Rights` (
 
 
 -- Дамп структуры для таблица events.loc.StoreAttribute
+DROP TABLE IF EXISTS `StoreAttribute`;
 CREATE TABLE IF NOT EXISTS `StoreAttribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -683,6 +708,7 @@ INSERT INTO `StoreAttribute` (`id`, `name`, `type`, `display_on_front`, `use_in_
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeOption
+DROP TABLE IF EXISTS `StoreAttributeOption`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeOption` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_id` int(11) DEFAULT NULL,
@@ -774,6 +800,7 @@ INSERT INTO `StoreAttributeOption` (`id`, `attribute_id`, `position`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeOptionTranslate
+DROP TABLE IF EXISTS `StoreAttributeOptionTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeOptionTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) DEFAULT NULL,
@@ -941,6 +968,7 @@ INSERT INTO `StoreAttributeOptionTranslate` (`id`, `language_id`, `object_id`, `
 
 
 -- Дамп структуры для таблица events.loc.StoreAttributeTranslate
+DROP TABLE IF EXISTS `StoreAttributeTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreAttributeTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -996,6 +1024,7 @@ INSERT INTO `StoreAttributeTranslate` (`id`, `object_id`, `language_id`, `title`
 
 
 -- Дамп структуры для таблица events.loc.StoreCategory
+DROP TABLE IF EXISTS `StoreCategory`;
 CREATE TABLE IF NOT EXISTS `StoreCategory` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `lft` int(10) unsigned DEFAULT NULL,
@@ -1030,6 +1059,7 @@ INSERT INTO `StoreCategory` (`id`, `lft`, `rgt`, `level`, `url`, `full_path`, `l
 
 
 -- Дамп структуры для таблица events.loc.StoreCategoryTranslate
+DROP TABLE IF EXISTS `StoreCategoryTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreCategoryTranslate` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1074,6 +1104,7 @@ INSERT INTO `StoreCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, 
 
 
 -- Дамп структуры для таблица events.loc.StoreCurrency
+DROP TABLE IF EXISTS `StoreCurrency`;
 CREATE TABLE IF NOT EXISTS `StoreCurrency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -1094,6 +1125,7 @@ INSERT INTO `StoreCurrency` (`id`, `name`, `iso`, `symbol`, `rate`, `main`, `def
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryMethod
+DROP TABLE IF EXISTS `StoreDeliveryMethod`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryMethod` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `price` float(10,2) DEFAULT '0.00',
@@ -1114,6 +1146,7 @@ INSERT INTO `StoreDeliveryMethod` (`id`, `price`, `free_from`, `position`, `acti
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryMethodTranslate
+DROP TABLE IF EXISTS `StoreDeliveryMethodTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryMethodTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1138,6 +1171,7 @@ INSERT INTO `StoreDeliveryMethodTranslate` (`id`, `object_id`, `language_id`, `n
 
 
 -- Дамп структуры для таблица events.loc.StoreDeliveryPayment
+DROP TABLE IF EXISTS `StoreDeliveryPayment`;
 CREATE TABLE IF NOT EXISTS `StoreDeliveryPayment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `delivery_id` int(11) DEFAULT NULL,
@@ -1171,6 +1205,7 @@ INSERT INTO `StoreDeliveryPayment` (`id`, `delivery_id`, `payment_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreManufacturer
+DROP TABLE IF EXISTS `StoreManufacturer`;
 CREATE TABLE IF NOT EXISTS `StoreManufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) DEFAULT '',
@@ -1205,6 +1240,7 @@ INSERT INTO `StoreManufacturer` (`id`, `url`, `layout`, `view`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreManufacturerTranslate
+DROP TABLE IF EXISTS `StoreManufacturerTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreManufacturerTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1262,6 +1298,7 @@ INSERT INTO `StoreManufacturerTranslate` (`id`, `object_id`, `language_id`, `nam
 
 
 -- Дамп структуры для таблица events.loc.StorePaymentMethod
+DROP TABLE IF EXISTS `StorePaymentMethod`;
 CREATE TABLE IF NOT EXISTS `StorePaymentMethod` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `currency_id` int(11) DEFAULT NULL,
@@ -1284,6 +1321,7 @@ INSERT INTO `StorePaymentMethod` (`id`, `currency_id`, `active`, `payment_system
 
 
 -- Дамп структуры для таблица events.loc.StorePaymentMethodTranslate
+DROP TABLE IF EXISTS `StorePaymentMethodTranslate`;
 CREATE TABLE IF NOT EXISTS `StorePaymentMethodTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1312,6 +1350,7 @@ INSERT INTO `StorePaymentMethodTranslate` (`id`, `object_id`, `language_id`, `na
 
 
 -- Дамп структуры для таблица events.loc.StoreProduct
+DROP TABLE IF EXISTS `StoreProduct`;
 CREATE TABLE IF NOT EXISTS `StoreProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturer_id` int(11) DEFAULT NULL,
@@ -1399,6 +1438,7 @@ INSERT INTO `StoreProduct` (`id`, `manufacturer_id`, `type_id`, `use_configurati
 
 
 -- Дамп структуры для таблица events.loc.StoreProductAttributeEAV
+DROP TABLE IF EXISTS `StoreProductAttributeEAV`;
 CREATE TABLE IF NOT EXISTS `StoreProductAttributeEAV` (
   `entity` int(11) unsigned NOT NULL,
   `attribute` varchar(250) DEFAULT '',
@@ -1598,6 +1638,7 @@ INSERT INTO `StoreProductAttributeEAV` (`entity`, `attribute`, `value`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreProductCategoryRef
+DROP TABLE IF EXISTS `StoreProductCategoryRef`;
 CREATE TABLE IF NOT EXISTS `StoreProductCategoryRef` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product` int(11) DEFAULT NULL,
@@ -1686,6 +1727,7 @@ INSERT INTO `StoreProductCategoryRef` (`id`, `product`, `category`, `is_main`) V
 
 
 -- Дамп структуры для таблица events.loc.StoreProductConfigurableAttributes
+DROP TABLE IF EXISTS `StoreProductConfigurableAttributes`;
 CREATE TABLE IF NOT EXISTS `StoreProductConfigurableAttributes` (
   `product_id` int(11) NOT NULL COMMENT 'Attributes available to configure product',
   `attribute_id` int(11) NOT NULL,
@@ -1698,6 +1740,7 @@ CREATE TABLE IF NOT EXISTS `StoreProductConfigurableAttributes` (
 
 
 -- Дамп структуры для таблица events.loc.StoreProductConfigurations
+DROP TABLE IF EXISTS `StoreProductConfigurations`;
 CREATE TABLE IF NOT EXISTS `StoreProductConfigurations` (
   `product_id` int(11) NOT NULL COMMENT 'Saves relations beetwen product and configurations',
   `configurable_id` int(11) NOT NULL,
@@ -1710,6 +1753,7 @@ CREATE TABLE IF NOT EXISTS `StoreProductConfigurations` (
 
 
 -- Дамп структуры для таблица events.loc.StoreProductImage
+DROP TABLE IF EXISTS `StoreProductImage`;
 CREATE TABLE IF NOT EXISTS `StoreProductImage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
@@ -1772,6 +1816,7 @@ INSERT INTO `StoreProductImage` (`id`, `product_id`, `name`, `is_main`, `uploade
 
 
 -- Дамп структуры для таблица events.loc.StoreProductTranslate
+DROP TABLE IF EXISTS `StoreProductTranslate`;
 CREATE TABLE IF NOT EXISTS `StoreProductTranslate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `object_id` int(11) DEFAULT NULL,
@@ -1882,6 +1927,7 @@ INSERT INTO `StoreProductTranslate` (`id`, `object_id`, `language_id`, `name`, `
 
 
 -- Дамп структуры для таблица events.loc.StoreProductType
+DROP TABLE IF EXISTS `StoreProductType`;
 CREATE TABLE IF NOT EXISTS `StoreProductType` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -1903,6 +1949,7 @@ INSERT INTO `StoreProductType` (`id`, `name`, `categories_preset`, `main_categor
 
 
 -- Дамп структуры для таблица events.loc.StoreProductVariant
+DROP TABLE IF EXISTS `StoreProductVariant`;
 CREATE TABLE IF NOT EXISTS `StoreProductVariant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_id` int(11) DEFAULT NULL,
@@ -1923,6 +1970,7 @@ CREATE TABLE IF NOT EXISTS `StoreProductVariant` (
 
 
 -- Дамп структуры для таблица events.loc.StoreRelatedProduct
+DROP TABLE IF EXISTS `StoreRelatedProduct`;
 CREATE TABLE IF NOT EXISTS `StoreRelatedProduct` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
@@ -1937,6 +1985,7 @@ CREATE TABLE IF NOT EXISTS `StoreRelatedProduct` (
 
 
 -- Дамп структуры для таблица events.loc.StoreTypeAttribute
+DROP TABLE IF EXISTS `StoreTypeAttribute`;
 CREATE TABLE IF NOT EXISTS `StoreTypeAttribute` (
   `type_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -1969,6 +2018,7 @@ INSERT INTO `StoreTypeAttribute` (`type_id`, `attribute_id`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.StoreWishlist
+DROP TABLE IF EXISTS `StoreWishlist`;
 CREATE TABLE IF NOT EXISTS `StoreWishlist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(10) DEFAULT '',
@@ -1984,6 +2034,7 @@ CREATE TABLE IF NOT EXISTS `StoreWishlist` (
 
 
 -- Дамп структуры для таблица events.loc.StoreWishlistProducts
+DROP TABLE IF EXISTS `StoreWishlistProducts`;
 CREATE TABLE IF NOT EXISTS `StoreWishlistProducts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `wishlist_id` int(11) DEFAULT NULL,
@@ -2001,6 +2052,7 @@ CREATE TABLE IF NOT EXISTS `StoreWishlistProducts` (
 
 
 -- Дамп структуры для таблица events.loc.SystemLanguage
+DROP TABLE IF EXISTS `SystemLanguage`;
 CREATE TABLE IF NOT EXISTS `SystemLanguage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '',
@@ -2021,6 +2073,7 @@ INSERT INTO `SystemLanguage` (`id`, `name`, `code`, `locale`, `default`, `flag_n
 
 
 -- Дамп структуры для таблица events.loc.SystemLayouts
+DROP TABLE IF EXISTS `SystemLayouts`;
 CREATE TABLE IF NOT EXISTS `SystemLayouts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -2038,6 +2091,7 @@ INSERT INTO `SystemLayouts` (`id`, `name`, `route`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemLayoutsWidgets
+DROP TABLE IF EXISTS `SystemLayoutsWidgets`;
 CREATE TABLE IF NOT EXISTS `SystemLayoutsWidgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -2059,6 +2113,7 @@ INSERT INTO `SystemLayoutsWidgets` (`id`, `layout_id`, `widget_id`, `position`, 
 
 
 -- Дамп структуры для таблица events.loc.SystemModules
+DROP TABLE IF EXISTS `SystemModules`;
 CREATE TABLE IF NOT EXISTS `SystemModules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT '',
@@ -2086,6 +2141,7 @@ INSERT INTO `SystemModules` (`id`, `name`, `enabled`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemSettings
+DROP TABLE IF EXISTS `SystemSettings`;
 CREATE TABLE IF NOT EXISTS `SystemSettings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(255) DEFAULT '',
@@ -2144,6 +2200,7 @@ INSERT INTO `SystemSettings` (`id`, `category`, `key`, `value`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.SystemWidgets
+DROP TABLE IF EXISTS `SystemWidgets`;
 CREATE TABLE IF NOT EXISTS `SystemWidgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL,
@@ -2157,7 +2214,7 @@ CREATE TABLE IF NOT EXISTS `SystemWidgets` (
   KEY `module_id` (`module_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.SystemWidgets: ~0 rows (приблизительно)
+-- Дамп данных таблицы events.loc.SystemWidgets: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `SystemWidgets` DISABLE KEYS */;
 INSERT INTO `SystemWidgets` (`id`, `module_id`, `group`, `name`, `description`, `class`, `params`, `status`) VALUES
 	(5, 62, 'sliders', 'home slider', NULL, 'application.modules.banners.widgets.nivoslider.ENivoSlider', 'a:3:{s:5:"width";s:4:"1000";s:6:"height";s:3:"500";s:9:"banner_id";s:1:"2";}', 1);
@@ -2165,6 +2222,7 @@ INSERT INTO `SystemWidgets` (`id`, `module_id`, `group`, `name`, `description`, 
 
 
 -- Дамп структуры для таблица events.loc.tbl_migration
+DROP TABLE IF EXISTS `tbl_migration`;
 CREATE TABLE IF NOT EXISTS `tbl_migration` (
   `version` varchar(255) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
@@ -2191,6 +2249,7 @@ INSERT INTO `tbl_migration` (`version`, `apply_time`) VALUES
 
 
 -- Дамп структуры для таблица events.loc.user
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT '',
@@ -2214,6 +2273,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_l
 
 
 -- Дамп структуры для таблица events.loc.user_profile
+DROP TABLE IF EXISTS `user_profile`;
 CREATE TABLE IF NOT EXISTS `user_profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,

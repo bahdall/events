@@ -1023,10 +1023,10 @@ FOOTER SECTION
 -------------------------------------------------------------------*/
 .footer-widget-wrapper {
     background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(45deg, #251E4B 30%, #190b2e 75%);
-    background-image: -o-linear-gradient(45deg, #251E4B 30%, #190b2e 75%);
-    background-image: linear-gradient(45deg, #251E4B 30%, #190b2e 75%);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#251E4B', endColorstr='#190b2e');
+    background-image: -webkit-linear-gradient(45deg, #161616 30%, #000000 75%);
+    background-image: -o-linear-gradient(45deg, #161616 30%, #000000 75%);
+    background-image: linear-gradient(45deg, #161616 30%, #000000 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#161616', endColorstr='#000000');
     color: #ffffff;
     padding: 17px 0 10px;
 }
@@ -1830,7 +1830,7 @@ BACK TO TOP
 }
 
 .navbar.navbar-bottom{
-	background: #251E4B;
+	background: #161616;
 }
 
 .navbar-default.navbar-bottom .navbar-nav>li>a{
