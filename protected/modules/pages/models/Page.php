@@ -86,6 +86,14 @@ class Page extends BaseModel
 					':status'=>$this->publishStatus
 				),
 			),
+			'futurePublished'=>array(
+				'condition'=>'publish_date > :date AND status = :status',
+				'params'=>array(
+					':date'=>date('Y-m-d H:i:s'),
+					':status'=>$this->publishStatus
+				),
+				'order' => 'publish_date ASC',
+			),
 		);
 	}
 

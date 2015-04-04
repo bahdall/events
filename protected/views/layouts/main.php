@@ -69,8 +69,8 @@
 											<a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/list', array('url' => 'news'))?>">News</a>
 										</li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/feedback')?>">Contacts</a></li>
-										<li><a class="page-scroll" href="#work">Vacancies</a></li>
-										<li><a class="page-scroll" href="#blog">TheHype.Ru Card</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'vacancies'))?>">Vacancies</a></li>
+										<li><a class="page-scroll" href="http://thehype.ru/">TheHype.Ru Card</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container -->
@@ -94,12 +94,12 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse navbar-collapse">
 									<ul class="nav navbar-nav navbar-right">
-										<li><a class="page-scroll" href="">Home</a></li>
+										<li><a class="page-scroll" href="/">Home</a></li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'about'))?>">About</a></li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/events/events/list')?>">Party Gallery</a></li>
-										<li><a class="page-scroll" href="">Party</a></li>
-										<li><a class="page-scroll" href="">Calender</a></li>
-										<li><a class="page-scroll" href="">Fun</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'party'))?>">Party</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/futureList', array('url' => 'calendar'))?>">Calendar</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'fun'))?>">Fun</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container -->
@@ -221,6 +221,8 @@
 															</div>
 														<?php endif; ?>
 
+														<br>
+
 														<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
 
 
@@ -264,6 +266,91 @@
 		</ul>
 	</div><!-- .offcanvas-menu -->
 	</div><!-- /st-container -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<h4 class="modal-title" id="eventModalLabel">Send us your feedback</h4>
+				</div>
+				<div class="modal-body">
+					<?php
+					Yii::import('feedback.FeedbackModule');
+					Yii::import('feedback.models.FutureEventForm');
+					$model = new FutureEventForm;
+
+					$form=$this->beginWidget('CActiveForm', array(
+						'action' => Yii::app()->createUrl('/feedback/event'),
+					)); ?>
+
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<?php echo CHtml::activeLabel($model,'name', array('required'=>true)); ?>
+								<?php echo CHtml::activeTextField($model,'name', array(
+									'class' => 'form-control',
+								)); ?>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<?php echo CHtml::activeLabel($model,'email', array('required'=>true)); ?>
+								<?php echo CHtml::activeTextField($model,'email', array(
+									'class' => 'form-control',
+								)); ?>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<?php echo CHtml::activeLabel($model,'title', array('required'=>true)); ?>
+								<?php echo CHtml::activeTextField($model,'title', array(
+									'class' => 'form-control',
+								)); ?>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group text-area">
+						<?php echo CHtml::activeLabel($model,'message', array('required'=>true)); ?>
+						<?php echo CHtml::activeTextArea($model,'message', array(
+							'class' => 'form-control',
+							'rows' => 10,
+						)); ?>
+					</div>
+
+					<?php if(Yii::app()->settings->get('feedback', 'enable_captcha')): ?>
+						<div class="row">
+							<div class="col-md-6">
+								<label><?php $this->widget('CCaptcha', array(
+										'clickableImage'=>true,
+										'showRefreshButton'=>false,
+										'captchaAction' => '/feedback/default/captcha'
+									)) ?></label>
+								<?php echo CHtml::activeTextField($model, 'code', array(
+									'class' => 'form-control',
+								))?>
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<br>
+
+					<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
+
+
+					<?php $this->endWidget(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- Preloader -->

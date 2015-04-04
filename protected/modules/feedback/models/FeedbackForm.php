@@ -59,9 +59,9 @@ class FeedbackForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'name'=>Yii::t('FeedbackModule.core', 'Ваше имя'),
+			'name'=>Yii::t('FeedbackModule.core', 'Your name'),
 			'email'=>Yii::t('FeedbackModule.core', 'Email'),
-			'message'=>Yii::t('FeedbackModule.core', 'Сообщение'),
+			'message'=>Yii::t('FeedbackModule.core', 'Message'),
 		);
 	}
 
@@ -79,7 +79,7 @@ class FeedbackForm extends CFormModel
 		$mailer->AddReplyTo($this->email);
 		$mailer->Send();
 
-		Yii::app()->user->setFlash('messages', Yii::t('FeedbackModule', 'Спасибо. Ваше сообщение отправлено.'));
+		Yii::app()->user->setFlash('messages', Yii::t('FeedbackModule', 'Your message has been sent.'));
 	}
 
 }

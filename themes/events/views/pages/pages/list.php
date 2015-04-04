@@ -20,6 +20,12 @@ $this->pageDescription = $model->meta_description;
         </div>
     </div> <!-- /.row -->
 
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <?=$model->description?>
+        </div>
+    </div>
+
     <?php if (sizeof($pages) > 0): ?>
     <?php foreach($pages as $page): ?>
         <div class="bb-evet">

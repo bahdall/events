@@ -44,6 +44,42 @@ class PagesController extends Controller
 	}
 
 	/**
+	 * Filter pages by category
+	 */
+	public function actionFutureList()
+	{
+		// Remove "pages/" from beginning
+		$url = substr(Yii::app()->request->getPathInfo(), 13);
+
+		$model = PageCategory::model()
+			->withFullUrl($url)
+			->find();
+
+		if (!$model) throw new CHttpException(404, Yii::t('PagesModule.core', 'Категория не найдена.'));
+
+		$criteria = Page::model()
+			->futurePublished()
+			->filterByCategory($model)
+			->getDbCriteria();
+
+		$count = Page::model()->count($criteria);
+
+		$pagination = new CPagination($count);
+		$pagination->pageSize = ($model->page_size > 0) ? $model->page_size: $model->defaultPageSize;
+		$pagination->applyLimit($criteria);
+
+		$pages = Page::model()->findAll($criteria);
+
+		$view = $this->setDesign($model, 'list');
+
+		$this->render($view, array(
+			'model'=>$model,
+			'pages'=>$pages,
+			'pagination'=>$pagination
+		));
+	}
+
+	/**
 	 * Display page by url.
 	 * Example url: /page/some-page-url
 	 * @param string $url page url

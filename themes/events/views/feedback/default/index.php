@@ -4,7 +4,7 @@
  * @var $this Controller
  */
 
-$this->pageTitle = Yii::t('FeedbackModule.core', 'Обратная связь');
+$this->pageTitle = Yii::t('FeedbackModule.core', 'Contacts');
 
 ?>
 
@@ -25,6 +25,11 @@ $this->pageTitle = Yii::t('FeedbackModule.core', 'Обратная связь');
 			'style' => 'padding: 10px; margin-bottom: 5px;'
 		)); ?>
 
+		<?if( $mess = Yii::app()->user->getFlash('messages') ):?>
+			<div class="bg-success" style="padding: 10px; margin-bottom: 5px;">
+				<?=$mess?>
+			</div>
+		<?endif;?>
 
 
 		<div class="row">
@@ -64,6 +69,7 @@ $this->pageTitle = Yii::t('FeedbackModule.core', 'Обратная связь');
 				</div>
 			</div>
 		<?php endif; ?>
+		<br>
 
 		<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
 
