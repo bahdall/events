@@ -70,7 +70,7 @@
 										</li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/feedback')?>">Contacts</a></li>
 										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'vacancies'))?>">Vacancies</a></li>
-										<li><a class="page-scroll" href="http://thehype.ru/">TheHype.Ru Card</a></li>
+										<li><a class="page-scroll" href="<?=Yii::app()->createUrl('/pages/pages/view', array('url' => 'thehyperu-card'))?>">TheHype.Ru Card</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</div><!-- /.container -->
@@ -148,7 +148,7 @@
 							<div class="row">
 								<div class="col-sm-3 col-md-3">
 									<div class="footer-widget footer-logo">
-										<?$this->widget( 'application.modules.core.widgets.IncludeFile.IncludeFile' ,array('file' => 'logo'))?>
+										<?$this->widget( 'application.modules.core.widgets.IncludeFile.IncludeFile' ,array('file' => 'logo2'))?>
 									</div><!-- /.col-md-6 -->
 								</div><!-- /.col-md-6 -->
 								<div class="col-sm-3 col-md-3">

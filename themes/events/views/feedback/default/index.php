@@ -4,20 +4,25 @@
  * @var $this Controller
  */
 
-$this->pageTitle = Yii::t('FeedbackModule.core', 'Contacts');
+$this->pageTitle = Yii::t('FeedbackModule.core', 'For quick message to TheHype fill the form with your inquiry');
 
 ?>
-
+<div class="col-md-12">
+	<h2>Contacts</h2>
+	<div>
+		<?$this->widget( 'application.modules.core.widgets.IncludeFile.IncludeFile' ,array('file' => 'contacts_feedback'))?>
+	</div>
+</div>
 
 <!-- Start article -->
 <article class="blog-post-wrapper">
 
 	<div class="entry-header" style="padding: 21px 20px 5px;">
-		<h2 class="entry-title"><?php echo Yii::t('FeedbackModule.core', 'Contacts') ?></h2>
+		<h3 class="entry-title"><?php echo Yii::t('FeedbackModule.core', 'For quick message to TheHype fill the form with your inquiry') ?></h3>
 	</div><!-- /.entry-header -->
 	<div  style="padding: 10px 20px 25px;">
 
-		<?php $form=$this->beginWidget('CActiveForm'); ?>
+		<?php $form = $this->beginWidget('CActiveForm'); ?>
 
 		<!-- Display errors  -->
 		<?php echo $form->errorSummary($model,NULL,NULL, array(

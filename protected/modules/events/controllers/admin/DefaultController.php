@@ -52,6 +52,9 @@ class DefaultController extends SAdminController {
 		// Set additional tabs
 		$form->additionalTabs = array(
 			Yii::t('EventsModule.admin','Изображения')    => $this->renderPartial('_images', array('model'=>$model), true),
+			Yii::t('EventsModule.admin','Видео')    => $this->renderPartial('_video', array(
+				'model'=>$model
+			), true),
 		);
 
 		if (Yii::app()->request->isPostRequest)
@@ -65,6 +68,7 @@ class DefaultController extends SAdminController {
 
 				// Handle images
 				$this->handleUploadedImages($model);
+				$this->handleUploadedVideos($model);
 
 				$this->setFlashMessage(Yii::t('EventsModule.core', 'Изменения успешно сохранены'));
 
@@ -129,6 +133,53 @@ class DefaultController extends SAdminController {
 			{
 				if(!EventsUploadedImage::hasErrors($image))
 					$model->addImage($image);
+				else
+					$this->setFlashMessage(Yii::t('EventsModule.admin', 'Ошибка загрузки изображения {name}', array('{name}'=>$image->getName())));
+			}
+		}
+	}
+
+
+	/**
+	 * @param Event $model
+	 */
+	public function handleUploadedVideos(Event $model)
+	{
+
+		$videos = isset($_POST['video']) ? $_POST['video'] : false;
+		if($videos)
+		{
+			foreach($model->video as $v)
+			{
+				if( !array_key_exists($v->id,$videos) )
+				{
+					$v->delete();
+				}
+			}
+
+			foreach($videos as $key => $video)
+			{
+				$NewVideo = EventVideo::model()->findByPk($key);
+
+				if(!$NewVideo)$NewVideo = new EventVideo();
+
+
+
+				if($video['video'])
+				{
+					$NewVideo->video = $video['video'];
+					$NewVideo->event_id = $model->id;
+					$NewVideo->save();
+				}
+
+				$image = CUploadedFile::getInstanceByName('videoImage['.$key.']');
+				if(!$image)continue;
+
+				if(!EventsUploadedImage::hasErrors($image))
+				{
+					$NewVideo->addImage($image);
+					$NewVideo->save();
+				}
 				else
 					$this->setFlashMessage(Yii::t('EventsModule.admin', 'Ошибка загрузки изображения {name}', array('{name}'=>$image->getName())));
 			}

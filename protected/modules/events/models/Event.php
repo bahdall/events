@@ -108,6 +108,7 @@ class Event extends BaseModel
 	{
 		return array(
 			'images' => array(self::HAS_MANY, 'EventImage', 'event_id'),
+			'video' => array(self::HAS_MANY, 'EventVideo', 'event_id'),
 		);
 	}
 

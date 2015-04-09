@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `ActionLog` (
   KEY `event` (`event`),
   KEY `datetime` (`datetime`),
   KEY `model_name` (`model_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.ActionLog: 59 rows
+-- Дамп данных таблицы events.loc.ActionLog: 65 rows
 /*!40000 ALTER TABLE `ActionLog` DISABLE KEYS */;
 INSERT INTO `ActionLog` (`id`, `username`, `event`, `model_name`, `model_title`, `datetime`) VALUES
 	(1, 'admin', 3, 'SystemModules', 'pages', '2015-03-25 13:28:08'),
@@ -104,7 +104,13 @@ INSERT INTO `ActionLog` (`id`, `username`, `event`, `model_name`, `model_title`,
 	(56, 'admin', 2, 'PageCategory', 'Calendar', '2015-04-04 15:08:35'),
 	(57, 'admin', 1, 'Page', 'Party', '2015-04-04 15:11:33'),
 	(58, 'admin', 1, 'Page', 'Fun', '2015-04-04 15:11:55'),
-	(59, 'admin', 1, 'Page', 'Vacancies', '2015-04-04 15:12:13');
+	(59, 'admin', 1, 'Page', 'Vacancies', '2015-04-04 15:12:13'),
+	(60, 'admin', 1, 'Page', 'Thehype.ru card', '2015-04-06 11:01:15'),
+	(61, 'admin', 2, 'PageCategory', 'News For Expats', '2015-04-06 11:05:18'),
+	(62, 'admin', 2, 'PageCategory', 'News For Expats', '2015-04-06 11:05:18'),
+	(63, 'admin', 2, 'PageCategory', 'Calendar', '2015-04-06 11:05:18'),
+	(64, 'admin', 2, 'Page', 'Vacancies', '2015-04-06 11:09:20'),
+	(65, 'admin', 2, 'Page', 'Vacancies', '2015-04-06 11:09:55');
 /*!40000 ALTER TABLE `ActionLog` ENABLE KEYS */;
 
 
@@ -244,9 +250,9 @@ INSERT INTO `BannersImagesTranslate` (`id`, `object_id`, `language_id`, `title`,
 	(43, 22, 1, '147852369', 'bhjbhjbjhb', 'hjbjbhjbjh'),
 	(44, 22, 9, '147852369', 'bhjbhjbjhb', 'hjbjbhjbjh'),
 	(45, 23, 1, 'Clean &amp; Fresh Design', 'Energistically benchmark resource maximizing catalysts for change with <br> enterprise collaboration and idea-sharing. Dramatically evisculate.', '<a href="#" class="btn btn-primary">Get Started</a'),
-	(46, 23, 9, 'fdsafdsafads', 'fdsafdsafdsa', 'fsdafdsafads'),
+	(46, 23, 9, 'test', 'test', 'test'),
 	(51, 26, 1, 'Creative Ideas &amp; Solutions', 'Energistically benchmark resource maximizing catalysts for change with <br> enterprise collaboration and idea-sharing. Dramatically evisculate.', '<a href="#" class="btn btn-primary">Get Started</a'),
-	(52, 26, 9, 'dsafdsaf', 'dsafdsafsadf', 'sdafsdafdsaf');
+	(52, 26, 9, 'test', 'test', 'test');
 /*!40000 ALTER TABLE `BannersImagesTranslate` ENABLE KEYS */;
 
 
@@ -393,6 +399,25 @@ INSERT INTO `EventImage` (`id`, `event_id`, `image`) VALUES
 /*!40000 ALTER TABLE `EventImage` ENABLE KEYS */;
 
 
+-- Дамп структуры для таблица events.loc.EventVideo
+DROP TABLE IF EXISTS `EventVideo`;
+CREATE TABLE IF NOT EXISTS `EventVideo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL DEFAULT '0',
+  `video` text NOT NULL,
+  `image` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы events.loc.EventVideo: ~2 rows (приблизительно)
+/*!40000 ALTER TABLE `EventVideo` DISABLE KEYS */;
+INSERT INTO `EventVideo` (`id`, `event_id`, `video`, `image`) VALUES
+	(4, 3, 'https://www.youtube.com/embed/kXYiU_JCYtU', '148142831332612.jpg'),
+	(5, 3, 'http://mover.uz/video/embed/gcZVF0fj/', '541142831332658.jpg'),
+	(11, 3, 'http://mytube.uz/136143.embed', '999142831332649.jpg');
+/*!40000 ALTER TABLE `EventVideo` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица events.loc.grid_view_filter
 DROP TABLE IF EXISTS `grid_view_filter`;
 CREATE TABLE IF NOT EXISTS `grid_view_filter` (
@@ -527,9 +552,9 @@ CREATE TABLE IF NOT EXISTS `Page` (
   KEY `updated` (`updated`),
   KEY `publish_date` (`publish_date`),
   KEY `status` (`status`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.Page: 10 rows
+-- Дамп данных таблицы events.loc.Page: 11 rows
 /*!40000 ALTER TABLE `Page` DISABLE KEYS */;
 INSERT INTO `Page` (`id`, `user_id`, `category_id`, `url`, `created`, `updated`, `publish_date`, `status`, `layout`, `view`) VALUES
 	(8, 1, NULL, 'about', '2012-06-10 22:35:51', '2015-04-03 10:39:13', '2012-06-10 22:35:29', 'published', '', ''),
@@ -541,7 +566,8 @@ INSERT INTO `Page` (`id`, `user_id`, `category_id`, `url`, `created`, `updated`,
 	(19, 1, 13, 'test-event', '2015-04-04 14:37:11', '2015-04-04 14:37:11', '2015-05-09 14:36:45', 'published', '', ''),
 	(20, 1, NULL, 'party', '2015-04-04 15:11:33', '2015-04-04 15:11:33', '2015-04-04 15:10:58', 'published', '', ''),
 	(21, 1, NULL, 'fun', '2015-04-04 15:11:54', '2015-04-04 15:11:54', '2015-04-04 15:11:33', 'published', '', ''),
-	(22, 1, NULL, 'vacancies', '2015-04-04 15:12:13', '2015-04-04 15:12:13', '2015-04-04 15:11:55', 'published', '', '');
+	(22, 1, NULL, 'vacancies', '2015-04-04 15:12:13', '2015-04-06 11:09:55', '2015-04-04 15:11:55', 'published', '', ''),
+	(23, 1, NULL, 'thehyperu-card', '2015-04-06 11:01:15', '2015-04-06 11:01:15', '2015-04-06 11:00:37', 'published', '', '');
 /*!40000 ALTER TABLE `Page` ENABLE KEYS */;
 
 
@@ -567,7 +593,7 @@ CREATE TABLE IF NOT EXISTS `PageCategory` (
 -- Дамп данных таблицы events.loc.PageCategory: 3 rows
 /*!40000 ALTER TABLE `PageCategory` DISABLE KEYS */;
 INSERT INTO `PageCategory` (`id`, `parent_id`, `url`, `full_url`, `layout`, `view`, `created`, `updated`, `page_size`) VALUES
-	(7, NULL, 'news', 'news', '', '', '2012-07-07 12:06:03', '2015-04-03 11:10:01', NULL),
+	(7, NULL, 'news', 'news', '', '', '2012-07-07 12:06:03', '2015-04-06 11:05:18', NULL),
 	(10, NULL, 'tesstovya2', 'tesstovya2', '', '', '2013-05-21 23:59:34', '2013-05-21 23:59:34', NULL),
 	(13, NULL, 'calendar', 'calendar', '', '', '2015-04-04 13:58:21', '2015-04-04 15:08:35', NULL);
 /*!40000 ALTER TABLE `PageCategory` ENABLE KEYS */;
@@ -593,7 +619,7 @@ CREATE TABLE IF NOT EXISTS `PageCategoryTranslate` (
 /*!40000 ALTER TABLE `PageCategoryTranslate` DISABLE KEYS */;
 INSERT INTO `PageCategoryTranslate` (`id`, `object_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keywords`) VALUES
 	(13, 7, 1, 'Новости', '', '', '', ''),
-	(14, 7, 9, 'News', '', '', '', ''),
+	(14, 7, 9, 'News For Expats', '', '', '', ''),
 	(15, 11, 1, 'sdfsdf', '', '', '', ''),
 	(16, 11, 9, 'sdfsdf', '', '', '', ''),
 	(17, 12, 1, 'Тесстовя2', '', '', '', ''),
@@ -618,9 +644,9 @@ CREATE TABLE IF NOT EXISTS `PageTranslate` (
   PRIMARY KEY (`id`),
   KEY `object_id` (`object_id`),
   KEY `language_id` (`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.PageTranslate: 20 rows
+-- Дамп данных таблицы events.loc.PageTranslate: 22 rows
 /*!40000 ALTER TABLE `PageTranslate` DISABLE KEYS */;
 INSERT INTO `PageTranslate` (`id`, `object_id`, `language_id`, `title`, `short_description`, `full_description`, `meta_title`, `meta_keywords`, `meta_description`) VALUES
 	(15, 8, 1, 'About', '<p>TheHype is an events company delighted to bring high\r\nquality social events to expats, international visitors and English speakers\r\nacross the Moscow region.</p>', '<p>TheHype is an events company delighted to bring high\r\nquality social events to expats, international visitors and English speakers\r\nacross the Moscow region.</p>\r\n<p>&nbsp;</p>\r\n<p>We are run by expats for expats, with quizzes, comedy\r\nnights, pub crawls, themed parties, live music, language exchanges and more: we\r\nare happy to hear your own suggestions!</p>\r\n<p>&nbsp;</p>\r\n<p>Our events take place in English and welcome English\r\nspeakers in Moscow of any nationality. Our aim at TheHype is simple: to offer\r\nyou events that are as memorable, enjoyable and fun as possible.</p>', '', '', ''),
@@ -642,7 +668,9 @@ INSERT INTO `PageTranslate` (`id`, `object_id`, `language_id`, `title`, `short_d
 	(41, 21, 1, 'Fun', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', '', '', ''),
 	(42, 21, 9, 'Fun', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', '', '', ''),
 	(43, 22, 1, 'Vacancies', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', '', '', ''),
-	(44, 22, 9, 'Vacancies', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', '', '', '');
+	(44, 22, 9, 'Vacancies', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\n\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.', '<div class="row">\r\n<div class="col-md-6">\r\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.\r\n</div>\r\n<div class="col-md-6">\r\nLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\r\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.\r\n</div>\r\n</div>', '', '', ''),
+	(45, 23, 1, 'Thehype.ru card', 'A simple card for good discounts and many benefits. Coming Soon', 'A simple card for good discounts and many benefits. Coming Soon', '', '', ''),
+	(46, 23, 9, 'Thehype.ru card', 'A simple card for good discounts and many benefits. Coming Soon', 'A simple card for good discounts and many benefits. Coming Soon', '', '', '');
 /*!40000 ALTER TABLE `PageTranslate` ENABLE KEYS */;
 
 
@@ -2172,7 +2200,7 @@ INSERT INTO `SystemSettings` (`id`, `category`, `key`, `value`) VALUES
 	(25, 'yandexMarket', 'company', 'Демо кампания'),
 	(26, 'yandexMarket', 'url', 'http://demo-company.loc/'),
 	(27, 'yandexMarket', 'currency_id', '2'),
-	(28, 'core', 'siteName', 'cms'),
+	(28, 'core', 'siteName', 'TheHYPE'),
 	(29, 'core', 'productsPerPage', '12,18,24'),
 	(30, 'core', 'productsPerPageAdmin', '30'),
 	(31, 'core', 'theme', 'events'),
@@ -2214,7 +2242,7 @@ CREATE TABLE IF NOT EXISTS `SystemWidgets` (
   KEY `module_id` (`module_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы events.loc.SystemWidgets: ~1 rows (приблизительно)
+-- Дамп данных таблицы events.loc.SystemWidgets: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `SystemWidgets` DISABLE KEYS */;
 INSERT INTO `SystemWidgets` (`id`, `module_id`, `group`, `name`, `description`, `class`, `params`, `status`) VALUES
 	(5, 62, 'sliders', 'home slider', NULL, 'application.modules.banners.widgets.nivoslider.ENivoSlider', 'a:3:{s:5:"width";s:4:"1000";s:6:"height";s:3:"500";s:9:"banner_id";s:1:"2";}', 1);

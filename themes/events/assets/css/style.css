@@ -1858,3 +1858,26 @@ BACK TO TOP
 .bb-welcome,.bb-welcome-text{
 	margin: 20px 0 0;
 }
+
+
+.bb-play{
+	display: none;
+	position: absolute;
+	width: 87%;
+	height: 100%;
+	background-color: #000000;
+	opacity: .8;
+}
+.play{
+	font-size: 60px;
+	margin: 60px 0;
+	color: #fff;
+}
+
+.play:hover{
+	color: #dcdfdf;
+}
+
+.bb-video:hover .bb-play{
+	display: block;
+}
