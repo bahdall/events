@@ -87,7 +87,6 @@ class PagesController extends Controller
 	public function actionView($url)
 	{
 		$model = Page::model()
-			->published()
 			->withUrl($url)
 			->find(array(
 				'limit'=>1
