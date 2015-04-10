@@ -33,7 +33,7 @@
                     <?endforeach;?>
                 </div>
                 <div class="col-sm-2 col-md-2 bb-morephoto">
-                    <a href="<?=$e->getViewUrl()?>" class="btn btn-primary">More photos</a>
+                    <a href="<?=$e->getViewUrl()?>" class="btn btn-primary">More photos &amp; videos</a>
                 </div>
             </div> <!-- /.row -->
         </div>

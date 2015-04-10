@@ -47,7 +47,7 @@ $this->pageDescription = "Events gallery";
                         <?endforeach;?>
                     </div>
                     <div class="col-sm-3 col-md-3 bb-morephoto">
-                        <a href="<?=$e->getViewUrl()?>" class="btn btn-primary">More photos</a>
+                        <a href="<?=$e->getViewUrl()?>" class="btn btn-primary">More photos &amp; videos</a>
                     </div>
                 </div> <!-- /.row -->
             </div>

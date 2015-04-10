@@ -76,7 +76,7 @@ $this->pageTitle = Yii::t('FeedbackModule.core', 'For quick message to TheHype f
 		<?php endif; ?>
 		<br>
 
-		<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
+		<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'SEND') ?></button>
 
 
 		<?php $this->endWidget(); ?>

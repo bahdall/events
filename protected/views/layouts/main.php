@@ -223,7 +223,7 @@
 
 														<br>
 
-														<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
+														<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'SEND') ?></button>
 
 
 														<?php $this->endWidget(); ?>
@@ -343,7 +343,7 @@
 
 					<br>
 
-					<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'Отправить') ?></button>
+					<button type="submit" class="btn btn-primary"><?php echo Yii::t('FeedbackModule.core', 'SEND') ?></button>
 
 
 					<?php $this->endWidget(); ?>
